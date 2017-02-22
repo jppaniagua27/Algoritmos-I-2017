@@ -1,0 +1,37 @@
+// jubilarse.cpp : Defines the entry point for the console application.
+// Nombre: Juan Pablo Paniagua
+// Fecha : 22/02/17
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main ()
+{
+	int edad, genero, N;
+	cout<<"Ingrese genero, 1 para hombre, 2 para mujer: ";
+	cin>>genero;
+	if (genero == 1)
+	{
+		cout<<"Ingrese su edad: ";
+		cin>>edad;
+		if (edad >= 65)
+			cout<<"Puede jubilarse!! ";
+		else
+			cout<<"No puede jubilarse!! ";
+	}
+	else
+	{
+		cout<<"Ingrese su edad: ";
+		cin>>edad;
+		cout<<"Ingrese cantidad de hijos: ";
+		cin>>N;
+		if (edad >= (60-N))
+			cout<<"Puede jubilarse!! ";
+		else
+			cout<<"No puede jubilarse!! ";
+	}
+	getch ();
+}
