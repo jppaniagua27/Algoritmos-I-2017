@@ -1,0 +1,21 @@
+// Mayorde18anos.cpp : Defines the entry point for the console application.
+//Nombre: Juan Pablo Paniagua Salinas
+//Fecha: 22/02/17
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main ()
+{
+	int edad;
+	cout<<"Ingrese su edad: ";
+	cin>>edad;
+	if (edad >= 18)
+		cout<<"Puede votar!! ";
+	if (edad < 18)
+		cout<<"No puede votar!! ";
+	getch();
+}
