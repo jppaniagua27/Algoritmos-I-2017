@@ -1,0 +1,59 @@
+// PrimerParcial.cpp : Defines the entry point for the console application.
+// Alumno: Juan Pablo Paniagua 
+// Fecha: 
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int prestamo (int s, int h, int m, int hipoteca);
+
+void main ()
+{
+	int s, h, m, hipoteca, x;
+	cout<<"Ingrese su sueldo en euros: ";
+	cin>>s;
+	cout<<"Tiene historial de pago, 1 para si, 0 para no: ";
+	cin>>h;
+	if (h==1)
+	{
+		cout<<"Se ha retrasado en algun pago, 1 para si, 0 para no: ";
+		cin>>m;
+	}
+	cout<<"Ingrese monto de hipoteca pagada al mes en euros: ";
+	cin>>hipoteca;
+	x=prestamo (s,h,m,hipoteca);
+	cout<<x;
+	getch();
+}
+int prestamo (int s, int h, int m, int hipoteca)
+{
+	int a,b,c;
+	if ((h==1 && m==1))
+	{
+		a=1;
+		return (a);
+	}
+	if ((hipoteca>(0.3*s)))
+	{
+		a=1;
+		return (a);
+	}
+	if ((h==0 && hipoteca<(0.2*s)))
+	{
+		b=2;
+		return (b);
+	}
+	if (h==1 && m==0 && hipoteca<(0.3*s))
+	{
+		b=2;
+		return (b);
+	}
+	else
+	{
+		c=3;
+		return (c);
+	}
+}
