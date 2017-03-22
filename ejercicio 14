@@ -1,0 +1,64 @@
+// ejercicio14.cpp : Defines the entry point for the console application.
+// Alumno: Juan Pablo Paniagua
+// Fecha: 22/03/17
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void cargarVec (float vec [], int n);
+void mostrarVec (float vec [], int n);
+void ordenarVec (float vec [], int n);
+
+void main()
+{
+	float vec[100];
+	int n;
+	cout<<"Ingrese tamanio de vector: ";
+	cin>>n;
+	cout<<"Ingrese datos al vector: "<<endl;
+	cargarVec (vec,n);
+	ordenarVec (vec,n);
+	mostrarVec (vec,n);
+
+	getch();
+
+
+}
+void cargarVec (float vec [], int n)
+{
+	int i;
+	for (i=0; i<n; i++)
+	{
+		cout<<"vec ["<<i<<"] = ";
+		cin>>vec[i];
+	}
+}
+void mostrarVec (float vec [], int n)
+{
+	int i;
+	for (i=0; i<n; i++)
+	{
+		cout<<" vec["<<i<<"] = "<<vec[i];
+	}
+}
+void ordenarVec (float vec [], int n)
+{
+	int i, j;
+	float num;
+	for (i=0; i<n-1; i++)
+	{
+		for (j=i+1; j<n; j++)
+		{
+			if (vec[i] > vec [j])
+			{
+				num = vec [i];
+				vec [i] = vec [j];
+				vec [j] = num;
+			}
+		}
+	}
+
+}
