@@ -1,0 +1,67 @@
+// menu.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+using namespace std;
+void numeroVocales (string var1);
+
+
+void main ()
+{
+	int opcion, longitud, cont=0;
+	string var1, var2, nombre;
+	cout<<"---------MENU--------"<<endl;
+	cout<<"1.-Ejemple de getline "<<endl;
+	cout<<"2.-Ejemplo de uso de length "<<endl;
+	cout<<"3.-Ejemplo de uso de compare "<<endl;
+	cout<<"4.-Ejemplo numero de vocales "<<endl;
+	cout<<"5.-Ejemplo sacar parte del string "<<endl;
+	cout<<"6.-Ejemplo intercambiar string "<<endl;
+	cout<<"7.-Ejemplo de encontrar caracteres en string "<<endl;
+	cout<<"8.-Ejemplo invertir frase "<<endl;
+	cout<<"9.-Ejemplo quitar vocales"<<endl;
+	cout<<"0.-Salir"<<endl;
+	cout<<"Ingrese opcion: "<<endl;
+	cin>>opcion;
+	cin.ignore();
+	switch (opcion)
+	{
+	case 1: cout<<"Ingrese un nombre: ";
+			getline(cin,nombre);
+			break;
+
+	case 2: cout<<"Ingrese un nombre: ";
+			getline(cin,nombre);
+			longitud=nombre.length();
+			cout<<"La longitud es: "<<longitud;
+			break;
+
+	case 3: cout<<"Ingrese un nombre: ";
+			getline(cin,nombre);
+			cout<<"Ingrese segundo nombre: ";
+			getline(cin,var1);
+			if (nombre.compare(var1)==0)
+				cout<<"Los datos coinciden!! ";
+			else
+				cout<<"No son los mismos datos!! ";
+			break;
+
+	case 4: cout<<"Ingrese palabra: ";
+			getline(cin,var1);
+			longitud=var1.length();
+			for (int i=0; i<=longitud; i++)
+			{
+				if (var1[i]=='a' || var1[i]=='e' || var1[i]=='i' || var1[i]=='o' ||  var1[i]=='u')
+					cont ++;
+				cout<<"El numero de vocales es: "<<cont;
+
+			}
+			break;
+	}
+
+	getch();
+}
